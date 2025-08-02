@@ -1,6 +1,6 @@
 # 🏦 Loan Approval Prediction using Machine Learning
 
-A supervised learning project to predict loan approval decisions based on applicant financial and credit attributes using advanced classification models.
+A supervised learning project to predict loan approval decisions based on applicants financial and credit attributes using advanced classification models.
 
 ---
 ## 📖 Overview  
@@ -73,34 +73,21 @@ This project utilizes two complementary datasets sourced from Kaggle:
 ---
 ## 🔍 Methods
 
-- 🧹 **`Data Cleaning`**:
+- 🧹 **Data Cleaning**:
     - Removed unrealistic entries (e.g., age > 100, employment before age 14)
     - Imputed missing values for `loan_int_rate` and `person_emp_length`
     - Dropped `id` as it holds no predictive value
     - Mapped ordinal features (loan grade) to numeric scale
     - Ensured consistency across merged datasets
 
-- 📊 **`EDA`**:
+- 📊 **EDA**:
   - Univariate, bivariate, and multivariate analysis
   - Custom visualization functions
 
-- ⚙️ **`Preprocessing`**:
+- ⚙️ **Preprocessing**:
   - OneHotEncoding for nominal features
   - StandardScaler for numerical features
   - Ordinal mapping for loan grades
-  - Encoded Features Summary:
-| Original Feature              | Encoding Type     | Notes                                                                 |
-|------------------------------|-------------------|-----------------------------------------------------------------------|
-| `person_home_ownership`      | One-Hot Encoding  | Converted into binary columns: `home_OWN`, `home_RENT`, etc.         |
-| `loan_intent`                | One-Hot Encoding  | Encoded into multiple columns: `intent_EDUCATION`, `intent_MEDICAL`, etc. |
-| `loan_grade`                 | Ordinal Encoding  | Mapped: `A` → 0, `B` → 1, ..., `G` → 6                                |
-| `cb_person_default_on_file` | Binary Encoding   | Mapped: `Y` → 1, `N` → 0                                              |
-  - Missing Values & Imputation Strategy:
-| Feature Name                 | Missing % | Imputation Method                | Notes                                      |
-|-----------------------------|-----------|----------------------------------|--------------------------------------------|
-| `loan_int_rate`             | ~3.5%     | Median Imputation                | Preserves central tendency                 |
-| `person_emp_length`         | ~2.1%     | Median Imputation                | Avoids skewing employment distribution     |
-| `cb_person_default_on_file` | <1%       | Mode Imputation (`N`)            | Assumes conservative default status        |
 
 - 🤖 **`Modeling`**:
   - Logistic Regression
@@ -110,6 +97,21 @@ This project utilizes two complementary datasets sourced from Kaggle:
   - **XGBoost** (Final Model)
 
 ---
+##### Encoded Features Summary:
+| Original Feature              | Encoding Type     | Notes                                                                 |
+|------------------------------|-------------------|-----------------------------------------------------------------------|
+| `person_home_ownership`      | One-Hot Encoding  | Converted into binary columns: `home_OWN`, `home_RENT`, etc.         |
+| `loan_intent`                | One-Hot Encoding  | Encoded into multiple columns: `intent_EDUCATION`, `intent_MEDICAL`, etc. |
+| `loan_grade`                 | Ordinal Encoding  | Mapped: `A` → 0, `B` → 1, ..., `G` → 6                                |
+| `cb_person_default_on_file` | Binary Encoding   | Mapped: `Y` → 1, `N` → 0                                              |
+
+##### Missing Values & Imputation Strategy:
+| Feature Name                 | Missing % | Imputation Method                | Notes                                      |
+|-----------------------------|-----------|----------------------------------|--------------------------------------------|
+| `loan_int_rate`             | ~3.5%     | Median Imputation                | Preserves central tendency                 |
+| `person_emp_length`         | ~2.1%     | Median Imputation                | Avoids skewing employment distribution     |
+| `cb_person_default_on_file` | <1%       | Mode Imputation (`N`)            | Assumes conservative default status        |
+
 ## 📈 Key Insights
 
 - 🏠 Renters have the highest loan approval rate (~25.5%)
@@ -128,9 +130,9 @@ cd loan-approval-prediction
 
 # Install dependencies
 pip install -r requirements.txt
-
-Then, run the notebook
 ```
+Then, run the notebook
+
 ---
 ## ✅ Results
 
