@@ -89,7 +89,7 @@ This project utilizes two complementary datasets sourced from Kaggle:
   - StandardScaler for numerical features
   - Ordinal mapping for loan grades
 
-- 🤖 **`Modeling`**:
+- 🤖 **Modeling**:
   - Logistic Regression
   - Decision Tree
   - Random Forest (Tuned)
